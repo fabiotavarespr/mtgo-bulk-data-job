@@ -1,0 +1,17 @@
+#
+# This docker-compose file starts and runs:
+# * A 1-node postgres
+
+version: '3.7'
+
+services:
+  postgres:
+    image: postgres:12-alpine
+    container_name: postgres12
+    restart: always
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=mtgo-bulk-data
+      - POSTGRES_DB=mtgo-bulk-data
+    ports:
+      - '5432:5432'
